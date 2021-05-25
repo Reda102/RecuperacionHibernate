@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-may-2021 12:57:12 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.recuperacion2.Entity.Professor" table="professor" catalog="institut" optimistic-lock="version">
+        <id name="idProfessor" type="java.lang.Integer">
+            <column name="idProfessor" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="departament" class="dam.recuperacion2.Entity.Departament" fetch="select">
+            <column name="idDepartament" not-null="true" />
+        </many-to-one>
+        <property name="nomProfessor" type="string">
+            <column name="nomProfessor" length="64" not-null="true" />
+        </property>
+        <property name="especialitat" type="string">
+            <column name="especialitat" length="128" />
+        </property>
+    </class>
+</hibernate-mapping>
